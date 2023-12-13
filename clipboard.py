@@ -18,8 +18,12 @@ class ClipboardClient:
         file_id: str = str(random_id_generator())
 
         if image is None:
-            img: Image = self.get_image()
-            img.save(self.predefined_save_area+f'\\{file_id}.jpg')
+            try:
+                img: Image = self.get_image()
+                img.save(self.predefined_save_area+f'\\{file_id}.jpg')
+            except:
+                print('Error: You should copy the image to the clipboard.')
+                exit(1)
         else:
             image.save(self.predefined_save_area+f'\\{file_id}.jpg')
 

@@ -59,6 +59,7 @@ if __name__ == '__main__':
         if sys.argv[-1] == "-d":
             import os
             os.system(f"del {os.getenv('QRSCANNER_FOLDER')}")
+            os.system(f"echo This folder is created for saving qrcode image files > {os.getenv('QRSCANNER_FOLDER')}\\note.txt")
             raise SystemExit(0)
         file_name: str = sys.argv[-1]
         result: str = scanner.read_qr_code(file_name)
