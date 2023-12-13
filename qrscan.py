@@ -53,7 +53,7 @@ if __name__ == '__main__':
         file_id: str = _clipboard.save_as_image()
         file_name: str = _clipboard.get_full_name(file_id)
         result: str = scanner.read_qr_code(file_name)
-        print(f"Result is: {result}.")
+        print(f"Result is: {result if result != '' else 'This is not a QRCode image'}.")
 
     else:
         if sys.argv[-1] == "-d":
@@ -63,4 +63,4 @@ if __name__ == '__main__':
             raise SystemExit(0)
         file_name: str = sys.argv[-1]
         result: str = scanner.read_qr_code(file_name)
-        print(f"Result is: {result}.")
+        print(f"Result is: {result if result != '' else 'This is not a QRCode image'}.")

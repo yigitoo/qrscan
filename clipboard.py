@@ -23,7 +23,7 @@ class ClipboardClient:
                 img.save(self.predefined_save_area+f'\\{file_id}.jpg')
             except:
                 print('Error: You should copy the image to the clipboard.')
-                exit(1)
+                raise SystemExit(1)
         else:
             image.save(self.predefined_save_area+f'\\{file_id}.jpg')
 
