@@ -11,8 +11,7 @@ class ClipboardClient:
         self.predefined_save_area: str = os.getenv('QRSCANNER_FOLDER')
 
     def get_image(self) -> Image:
-        image = ImageGrab.grabclipboard()
-        return image
+        return ImageGrab.grabclipboard()
 
     def save_as_image(self, image: Image = None) -> str:
         file_id: str = str(random_id_generator())
